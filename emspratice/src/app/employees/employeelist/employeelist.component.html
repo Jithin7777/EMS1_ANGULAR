@@ -1,0 +1,84 @@
+<div class="text-end container">
+  <h1 class="text-center mt-3">EMPLOYEE LIST</h1>
+  <div class="text-start mt-3">
+    <label for="">
+      <input
+        type="text"
+        placeholder="search employees"
+        [(ngModel)]="searchTerm"
+        class="form-control"
+      />
+    </label>
+  </div>
+
+  <mat-form-field class="me-5">
+    <mat-label>Filter</mat-label>
+    <mat-select #mode value="side">
+<button (click)="filteredString('     ')">
+        <mat-option value="side"> remove filter</mat-option>
+  
+</button>      <button (click)="filteredString('1')">
+        <mat-option value="side" class="">ACTIVE</mat-option>
+      </button>
+      <button (click)="filteredString('0')">
+        <mat-option value="over">INACTIVE</mat-option>
+      </button>
+    </mat-select>
+  </mat-form-field>
+
+  <a routerLink="/dashboard/employee-add">
+    <button class="btn btn-success">Add New User</button>
+  </a>
+
+  <!-- Custom table using *ngFor -->
+  <table class="table mt-5">
+    <thead class="text-center">
+      <tr>
+        <!-- <th></th> -->
+        <th>UserID</th>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr
+        *ngFor="
+          let employee of allEmployess
+            | search : searchTerm
+            | filter : filterString;
+          let j = index
+        "
+      >
+        <!-- <td>{{j+1}}</td> -->
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.username }}</td>
+        <td>{{ employee.email }}</td>
+        <td>
+          <i
+            [ngClass]="employee.status == 1 ? 'c1' : 'c2'"
+            class="fa-regular fa-user"
+          ></i>
+          {{ employee.status == 0 ? "inactive" : "active" }}
+        </td>
+        <td>
+          <a routerLink="/dashboard/employee-edit/{{ employee.id }}">
+            <button class="btn btn-info me-2">Edit</button>
+          </a>
+          <button (click)="deleteEmployee(employee.id)" class="btn btn-danger">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="container">
+    <div class="text-start mt-5">
+      <button class="btn btn-danger px-5">
+        Export as <i class="fa-solid fa-file-pdf"></i>
+      </button>
+    </div>
+  </div>
+</div>

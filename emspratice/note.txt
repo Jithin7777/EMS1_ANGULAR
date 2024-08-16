@@ -1,0 +1,67 @@
+form creation methods in angular
+
+1-template driven form-form create only with html(issue:data binding and validation seperate)
+2.model driven form-form create  with html and create a model for that form in ts
+(advatage:easily do data binding and validationusing that model)
+
+model driven form(reactive form)
+
+reactiveformsModule -module used to create model driven form
+
+formBuilder -class inside reactiveformsModule
+class have methoda and attributes
+group -method inside FormBuilder
+
+angular directives (conditional rendering) technology
+------------------
+used to provide additional behaviour to html elements
+
+1.component directives - same as component selector which used to view its html contents in another page
+2.structural directives- used t change structure of html by adding/removing elemnts
+*ngFor
+*ngIf
+*ngSwitch
+3.attribute directives- used to provide style to html elements [ngClass]
+
+
+Api in angular
+--------------
+
+httpClient module
+httpClient -class
+
+
+asynchronous in angular
+------------------------
+
+js-promise  then()  catch()
+
+ts-observable(class)  subscribe()  catch()
+
+subscribe --- the resolve output may be success(200)-next
+                                        error(400/500)-error
+
+
+
+
+  redirect
+  ---------
+
+
+  routerLink
+
+  navigateByUrl -method (class Router) --AppRoutingModule        
+
+Access url param si angular
+----------------------------
+  ActivatedRoute- class used to access params
+  params-method                              
+
+
+  Angular Pipes
+  -------------
+
+  used to transform datas in angular
+  -> ng g pipe pipeName  -- n g p pipeName
+
+  transform(data to be tranformed,searchSring used to transform data)

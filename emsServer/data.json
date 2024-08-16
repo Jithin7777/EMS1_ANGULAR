@@ -1,0 +1,35 @@
+{
+  "admin": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "username": "sxssqsq",
+      "email": "sxxszzz",
+      "status": "1"
+    },
+    {
+      "id": 2,
+      "username": "jith",
+      "email": "arun@gmail.com",
+      "status": "1"
+    },
+    {
+      "id": 3,
+      "username": "arun",
+      "email": "anu@gmail.com",
+      "status": "1"
+    },
+    {
+      "id": 4,
+      "username": "ssss",
+      "email": "sws@gmail.com",
+      "status": "0"
+    }
+  ]
+}
