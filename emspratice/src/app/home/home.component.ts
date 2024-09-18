@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit {
                 alert('Login success');
                 // Reset form data after success
                 this.loginForm.reset();
+                localStorage.setItem('username',uname)
                 // Navigate to the dashboard
                 this.route.navigateByUrl('dashboard');
               } else {
@@ -68,10 +69,10 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  hide = signal(true); // Signal for password visibility toggle
+  hide = signal(true); 
 
   clickEvent(event: MouseEvent) {
-    this.hide.set(!this.hide()); // Toggle visibility state
-    event.stopPropagation(); // Prevent event propagation
+    this.hide.set(!this.hide()); 
+    event.stopPropagation();  
   }
 }

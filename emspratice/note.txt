@@ -65,3 +65,9 @@ Access url param si angular
   -> ng g pipe pipeName  -- n g p pipeName
 
   transform(data to be tranformed,searchSring used to transform data)
+
+
+
+  RoutGuards - used to protect routes
+
+  ng generate guard auth - ng g g auth
